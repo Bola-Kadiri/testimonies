@@ -14,7 +14,7 @@ const Testimony = () => {
               return(
                <div className='card' key={test.id}>
                <h2>{test.name}</h2>
-               <p>{test.branch}</p>
+               <p className='branch'>{test.branch}</p>
                <div className='white-card'>
                    <p>{test.message}</p>
                 </div>
