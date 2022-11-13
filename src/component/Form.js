@@ -1,10 +1,11 @@
 import React, {useContext, useState} from 'react'
 import { TestimonyContext } from '../context/TestimonyContext'
 import './Form.css'
+import { useNavigate } from "react-router-dom";
 
 
 const Form = () => {
-   
+  const navigate = useNavigate()
     const {addTestimony} =  useContext(TestimonyContext);
     const [name, setName] = useState('');
     const [ branch, setBranch] = useState('');
@@ -12,6 +13,7 @@ const Form = () => {
     const handleSubmit=(e)=>{
        e.preventDefault();
        addTestimony(name, branch, message)
+       navigate('/')
        setName('');
        setBranch('');
        setMessage('')
